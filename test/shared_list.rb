@@ -38,9 +38,9 @@ module Shared
 
     def test_next_prev
       assert_equal ListMixin.where(id: 2).first, ListMixin.where(id: 1).first.lower_item
-      assert_nil ListMixin.where(id: 1).first.higher_item
+      assert_nil   ListMixin.where(id: 1).first.higher_item
       assert_equal ListMixin.where(id: 3).first, ListMixin.where(id: 4).first.higher_item
-      assert_nil ListMixin.where(id: 4).first.lower_item
+      assert_nil   ListMixin.where(id: 4).first.lower_item
     end
 
     def test_injection
@@ -171,10 +171,10 @@ module Shared
 
       assert_equal [2, 1, 3, 4], ListMixin.where(parent_id: 5).order('pos').map(&:id)
 
-      assert_equal 1,   ListMixin.where(id: 1).first.pos
-      assert_equal nil, ListMixin.where(id: 2).first.pos
-      assert_equal 2,   ListMixin.where(id: 3).first.pos
-      assert_equal 3,   ListMixin.where(id: 4).first.pos
+      assert_equal 1, ListMixin.where(id: 1).first.pos
+      assert_nil      ListMixin.where(id: 2).first.pos
+      assert_equal 2, ListMixin.where(id: 3).first.pos
+      assert_equal 3, ListMixin.where(id: 4).first.pos
     end
 
     def test_remove_before_destroy_does_not_shift_lower_items_twice

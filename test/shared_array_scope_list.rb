@@ -25,7 +25,7 @@ module Shared
 
       ArrayScopeListMixin.where(id: 4).first.move_to_top
       assert_equal [4, 1, 3, 2], ArrayScopeListMixin.where(parent_id: 5, parent_type: 'ParentClass').order('pos').map(&:id)
-      
+
       ArrayScopeListMixin.where(id: 4).first.insert_at(4)
       assert_equal [1, 3, 2, 4], ArrayScopeListMixin.where(parent_id: 5, parent_type: 'ParentClass').order('pos').map(&:id)
       assert_equal [1, 2, 3, 4], ArrayScopeListMixin.where(parent_id: 5, parent_type: 'ParentClass').order('pos').map(&:pos)
@@ -39,9 +39,9 @@ module Shared
 
     def test_next_prev
       assert_equal ArrayScopeListMixin.where(id: 2).first, ArrayScopeListMixin.where(id: 1).first.lower_item
-      assert_nil ArrayScopeListMixin.where(id: 1).first.higher_item
+      assert_nil   ArrayScopeListMixin.where(id: 1).first.higher_item
       assert_equal ArrayScopeListMixin.where(id: 3).first, ArrayScopeListMixin.where(id: 4).first.higher_item
-      assert_nil ArrayScopeListMixin.where(id: 4).first.lower_item
+      assert_nil   ArrayScopeListMixin.where(id: 4).first.lower_item
     end
 
     def test_injection
@@ -139,7 +139,7 @@ module Shared
       assert_equal [2, 1, 3, 4], ArrayScopeListMixin.where(parent_id: 5, parent_type: 'ParentClass').order('pos').map(&:id)
 
       assert_equal 1,   ArrayScopeListMixin.where(id: 1).first.pos
-      assert_equal nil, ArrayScopeListMixin.where(id: 2).first.pos
+      assert_nil ArrayScopeListMixin.where(id: 2).first.pos
       assert_equal 2,   ArrayScopeListMixin.where(id: 3).first.pos
       assert_equal 3,   ArrayScopeListMixin.where(id: 4).first.pos
     end

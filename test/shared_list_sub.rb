@@ -38,9 +38,9 @@ module Shared
 
     def test_next_prev
       assert_equal ListMixin.where(id: 2).first, ListMixin.where(id: 1).first.lower_item
-      assert_nil ListMixin.where(id: 1).first.higher_item
+      assert_nil   ListMixin.where(id: 1).first.higher_item
       assert_equal ListMixin.where(id: 3).first, ListMixin.where(id: 4).first.higher_item
-      assert_nil ListMixin.where(id: 4).first.lower_item
+      assert_nil   ListMixin.where(id: 4).first.lower_item
     end
 
     def test_next_prev_groups
