@@ -450,7 +450,7 @@ module ActiveRecord
           end
 
           def update_positions
-            old_position = send("#{position_column}_was").to_i
+            old_position = send(:attribute_before_last_save, position_column.to_sym).to_i
             new_position = send(position_column).to_i
 
             return unless acts_as_list_class.unscoped do
