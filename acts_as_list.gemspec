@@ -29,6 +29,6 @@ Gem::Specification.new do |s|
 
 
   # Dependencies (installed via "bundle install")
-  s.add_dependency "activerecord", ">= 4.2"
+  s.add_dependency "activerecord", ">= 5.1.7"
   s.add_development_dependency "bundler", ">= 1.0.0"
 end
