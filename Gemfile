@@ -16,7 +16,7 @@ group :test do
 end
 
 group :sqlite do
-  gem "sqlite3"
+  gem "sqlite3", "~> 1.3.13"
 end
 
 group :postgresql do
