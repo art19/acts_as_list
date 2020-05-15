@@ -15,10 +15,6 @@ group :test do
   gem "mocha"
 end
 
-group :sqlite do
-  gem "sqlite3", "~> 1.3.13"
-end
-
 group :postgresql do
   gem "pg", "~> 1.1.4"
 end
